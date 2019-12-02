@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+
+        android:hint="Checkin Date"
+        android:id="@+id/checkindate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="29dp"/>
+
+
+
+    <TextView
+        android:hint="Checkout Date"
+        android:id="@+id/checkoutdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="29dp"/>
+
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sroom"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:id="@+id/tvprice"/>
+
+    <TextView
+        android:hint="Adult   Children    Room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <EditText
+            android:id="@+id/etadult"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:layout_marginLeft="100dp"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/etchildren"
+            android:layout_marginLeft="180dp"
+            android:inputType="number"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etroom"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:layout_marginLeft="250dp"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <Button
+        android:hint="Calculate"
+        android:id="@+id/btncal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvresult"
+        android:layout_margin="10dp"
+        android:textSize="20sp"/>
+
+
+
+</LinearLayout>
