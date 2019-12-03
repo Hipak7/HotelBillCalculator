@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 adult = Integer.parseInt(etadult.getText().toString());
                 child = Integer.parseInt(etChild.getText().toString());
                 room = Integer.parseInt(etRoom.getText().toString());
-
+//
                 Calendar cal1=Calendar.getInstance();
                 Calendar cal2=Calendar.getInstance();
                 cal1.set(year2,month2,day2);
