@@ -1,11 +1,8 @@
 package com.softwarica.hotelbillcalculator;
 
-
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.app.DatePickerDialog;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btncal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(checkindate.getText()))
+                if(TextUtils.isEmpty(checkindate.getText())) // It will return true if its empty/null.
                 {
                     checkindate.setError("Please enter Check in Date");
                     return;
@@ -85,11 +82,11 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 if (TextUtils.isEmpty(etChild.getText())) {
-                    etChild.setError("Enter no of childs");
+                    etChild.setError("Enter no of Children");
                     return;
                 }
                 if (TextUtils.isEmpty(etRoom.getText())) {
-                    etRoom.setError("Enter no of rooms");
+                    etRoom.setError("Enter no of Rooms");
                     return;
                 }
 
@@ -110,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 int adult, child, room;
-                double total, price, vat, GrossTotal;
+                double total, price, vat, GrossTotal;//Returns decimal values
 
                 adult = Integer.parseInt(etadult.getText().toString());
                 child = Integer.parseInt(etChild.getText().toString());
@@ -139,7 +136,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    tvresult.setText("Total: Rs." + total + "\n" + "Vat Rs.:" + vat + "\n" + "Gross Total: Rs." + GrossTotal);
+                    tvresult.setText(
+
+                            "Total days you stayed in hotel : " + diffDays + "days" + "\n" + "Number of adult : "+ adult + "\n" +
+                            "Number of children : " + child + "\n" + "Number of rooms : " + room + "\n" +
+                            "The Total: Rs." + total + "\n" + "17% Vat Charge Rs.:" + vat + "\n" + "Gross Total: Rs." + GrossTotal
+                    );
                 }
 
 
@@ -150,30 +152,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    private void loadDatePickerDate2() {
-        final Calendar c1=Calendar.getInstance();
-        int year= c1.get(Calendar.YEAR);
-        final int month = c1.get(Calendar.MONTH);
-        int day= c1.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog datePickerDialog=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year1, int month, int dayOfMonth1) {
-                month=month+1;
-                String date = "Checking out Date: "+month + "/" + dayOfMonth1 + "/" + year1;
-
-                month3=month;
-                day3=dayOfMonth1;
-                year3=year1;
-                checkoutdate.setText(date);
-            }
-        },year,month,day);
-        datePickerDialog.show();
-
-
-    }
-
+    //Android DatePicker and DatePickerDialog Components
     private void loadDatePickerDate1() {
         final Calendar c=Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -184,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month=month+1;
-                String date = "Checking Date: "+month + "/" + dayOfMonth + "/" + year;
+                String date = "Check-in Date: "+month + "/" + dayOfMonth + "/" + year;
                 month2=month;
                 day2=dayOfMonth;
                 year2=year;
@@ -196,5 +175,28 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private void loadDatePickerDate2() {
+        final Calendar c1=Calendar.getInstance();
+        int year= c1.get(Calendar.YEAR);
+        final int month = c1.get(Calendar.MONTH);
+        int day= c1.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year1, int month, int dayOfMonth1) {
+                month=month+1;
+                String date = "Check-out Date: "+month + "/" + dayOfMonth1 + "/" + year1;
+                month3=month;
+                day3=dayOfMonth1;
+                year3=year1;
+                checkoutdate.setText(date);
+            }
+        },year,month,day);
+        datePickerDialog.show();
+
+
+    }
+
+
 
 }

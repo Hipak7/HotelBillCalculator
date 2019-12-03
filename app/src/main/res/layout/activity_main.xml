@@ -15,7 +15,8 @@
         android:id="@+id/checkindate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="29dp"/>
+        android:layout_margin="29dp"
+        android:textSize="20sp"/>
 
 
 
@@ -24,7 +25,8 @@
         android:id="@+id/checkoutdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="29dp"/>
+        android:layout_margin="29dp"
+        android:textSize="20sp"/>
 
 
 
@@ -81,15 +83,21 @@
         android:hint="Calculate"
         android:id="@+id/btncal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-black"/>
 
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvresult"
         android:layout_margin="10dp"
         android:textSize="20sp"/>
-
+    </ScrollView>
 
 
 </LinearLayout>
